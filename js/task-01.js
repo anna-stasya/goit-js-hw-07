@@ -7,4 +7,7 @@ for (const item of categories) {
 
     const categoriesEl = item.querySelectorAll('li').length;
         console.log('Количество элементов:', categoriesEl);
+
+        const nameAnimal = item.querySelectorAll('li').textContent;
+        console.log('Животные', nameAnimal);
 };

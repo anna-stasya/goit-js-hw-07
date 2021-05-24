@@ -19,16 +19,25 @@ const images = [
 
   const imagesEl = document.getElementById('gallery');
 
+const imagesGallery = images.map(image => {
+return `<li><img src='${image.url}' alt='${image.alt}'></li>`
+}).join('');
 
-  for (const image of images){
+imagesEl.insertAdjacentHTML('afterbegin', imagesGallery);
+    
 
-    const imageList = document.createElement('li');
-    const imageTag = document.createElement('img');
 
-    imagesEl.appendChild(imageList);
-    imageList.appendChild(imageTag);
+//==========через фор и не шаблонные строки
 
-    imageTag.insertAdjacentHTML('afterbegin', image);
-    imageTag.src = image.url;
+  // for (const image of images){
+
+  //   const imageList = document.createElement('li');
+  //   const imageTag = document.createElement('img');
+
+  //   imagesEl.appendChild(imageList);
+  //   imageList.appendChild(imageTag);
+
+  //   imageTag.insertAdjacentHTML('afterbegin', image);
+  //   imageTag.src = image.url;
    
-  };
+  // };

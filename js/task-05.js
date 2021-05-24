@@ -3,22 +3,36 @@ const refs = {
     span: document.getElementById('name-output'),
 };
 
-const defoltEl = refs.span.textContent;
+ console.log(refs.input.value);
 
 function onInputChange(event){
 
-   if (event.currentTarget.value === ''){
-        return refs.span.textContent = 'незнакомец';
-    }
-     refs.span.textContent = event.currentTarget.value;
-    //  else { 
-    //      refs.span.textContent = event.currentTarget.value;
-    //     }
-}
-
-refs.input.addEventListener('input', onInputChange)
+     refs.span.textContent = event.currentTarget.value.trim() === '' 
+     ? 'незнакомец'
+     :  event.currentTarget.value;    
+      
+ }
+ refs.input.addEventListener('input', onInputChange);
+ 
 
 
 
 
 
+
+//===================вариант с пробелом и через иф=======================
+
+//   const defoltEl = refs.span.textContent;
+
+ // function onInputChange(event){
+
+//    if (event.currentTarget.value === ''){
+//         return refs.span.textContent = defoltEl;    //'незнакомец';
+//     }
+//      refs.span.textContent = event.currentTarget.value;
+
+// }
+
+// refs.input.addEventListener('input', onInputChange)
+
+//==========================================
